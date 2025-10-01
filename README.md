@@ -1,86 +1,75 @@
-# 📊 Dashboard Technical Monitoring
+# 📂 Dashboard Technical Monitoring & Technology Watch
 
-## 🚀 Description
+## 👨‍💻 Context
 
-This project is a Streamlit application that creates an interactive credit scoring dashboard.
-It connects to an external API to download a scoring model and perform creditworthiness predictions, integrating visual analytics with Plotly, SHAP, and Seaborn.
+This repository contains **two separate deliverables** created as part of Project 8 of the Data Scientist course offered by OpenClassrooms & CentraleSupélec :
 
-## 📂 Project Structure
+- Deployment of a **credit scoring dashboard** (visualization, interpretability, API).
+- Conducting **technology monitoring** using NLP and Transformer-type models.
 
-- dashboard.py → Main Streamlit application.
-- requirements.txt → Python dependencies.
-- runtime.txt → Python version used.
-- Procfile → Launch file for deployment (Heroku/Render).
-- my_file.csv → Customer data (⚠️ must be present to run the dashboard).
+⚠️ As the original datasets are large or confidential, they are **not included in this repository**.
+The objective is to demonstrate the **methodological and technical approach**, not to provide a directly executable project.
 
-## 🛠 Local Installation
+## 📊 Part 1 – Credit Scoring Dashboard
 
-**1. Clone the repository**
+📁 File: dashboard/
 
-git clone https://github.com/alex-martineau/Dashboard_Technical_Monitoring.git
-cd Dashboard_Technical_Monitoring
+This part is from **Project 7**. It illustrates the implementation of a **Streamlit dashboard** to:
 
-**2. Create a virtual environment**
+- Load and run a scoring model via an external API.
+- Visualize a customer's credit scores.
+- Explore the data using univariate and bivariate analyses.
+- Explain model decisions using **SHAP values** ​​and **Feature Importance**.
 
-python -m venv venv
-source venv/bin/activate # Linux / Mac
-venv\Scripts\activate # Windows
+**Contents:**
 
-**3. Install dependencies**
+- dashboard.py → Streamlit main application.
+- requirements.txt, runtime.txt, Procfile → files required for deployment (Heroku/Render).
+- **Not included**: my_file.csv (dataset too large).
 
-pip install --upgrade pip
-pip install -r requirements.txt
+**Technologies used:**
 
-**4. Add environment variables**
+**- Python 3.10+, Streamlit, Plotly, SHAP, Seaborn, MLflow, Joblib.**
 
-Create a .env file at the root of the project:
+**For more information:**
 
-MODEL_PASSWORD=Credit-Scoring-2025
-API_URL=https://my-scoring-app-546acd78d8fa.herokuapp.com/
+👉 See the dashboard's specific README.
 
-(⚠️ These values ​​must be adapted according to your scoring API.)
+## 🔍 Part 2 – Technology Monitoring (NLP)
 
-**5. Launch the dashboard**
+📁 File: veille_technologique/
 
-streamlit run dashboard.py
+This part is from **Project 6**.
+It consists of a **methodological note** and a **technical notebook** aimed at comparing two NLP models:
 
-Then open **http://localhost:8501** in your browser.
+- all-MiniLM-L6-v2 (distilled, lightweight, and fast model).
+- bert-base-uncased (heavier reference model).
 
-## ☁️ Deployment (Heroku / Render)
+**Objectives:**
 
-**1. Heroku**
+- Evaluate their performance in e-commerce product classification.
+- Explore the quality of embeddings (t-SNE, KMeans clustering, ARI).
+- Highlight the advantages of distilled models for production use.
 
-heroku create my-scoring-dashboard
-git push heroku main
+**Content:**
 
-Configure the environment variables on Heroku:
+- Martineau_Alexandre_2_notebook_veille_022025.ipynb → Complete notebook.
+- Martineau_Alexandre_3_methodological_note_022025.pdf → Written note, with interpretation of results.
 
-heroku config:set MODEL_PASSWORD=Credit-Scoring-2025
-heroku config:set API_URL=https://my-scoring-app-546acd78d8fa.herokuapp.com/
+**Technologies used:**
 
-**2. Render**
+**- Python, Transformers (Hugging Face), scikit-learn, t-SNE, KMeans.**
 
-- Create a new web service → Choose your GitHub repository.
-- Start command:
-web: streamlit run dashboard.py --server.port=$PORT --server.enableCORS false
-- Add the MODEL_PASSWORD and API_URL environment variables to the Render configuration table.
+# 🚀 Demonstrated strengths
 
-**🔒 Security**
+- Deployment of an interactive and interpretable application for credit scoring.
+- Implementation of a clear and reproducible workflow for data processing.
+- Ability to popularize technology monitoring and link it to concrete use cases.
+- Solid knowledge of MLflow, NLP, SHAP, data visualization, and cloud deployment.
 
-- ⚠️ MLflow is vulnerable below 2.22.2. Make sure to update your requirements.txt file:
-mlflow>=2.22.2
-mlflow-skinny>=2.22.2
-- ⚠️ Never put passwords or API keys in clear text in your code → use environment variables.
-- ⚠️ Check the integrity of the downloaded model before loading it with joblib.load().
+# 👨‍💻 Author
 
-**✅ To-do / Improvements**
-
-- Add an integrity check (hash/signature) on the downloaded model.
-- Document the expected format of my_file.csv.
-- Migrate to Python 3.11 (more future-proof than 3.10).
-- Implement automated tests.
-
-## 👨‍💻 Author
+## 👤 Author
 
 **Alexandre Christophe Dominique Martineau**
 - [GitHub](https://github.com/alex-martineau)
