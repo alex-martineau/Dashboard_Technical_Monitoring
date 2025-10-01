@@ -60,13 +60,6 @@ It consists of a **methodological note** and a **technical notebook** aimed at c
 
 **- Python, Transformers (Hugging Face), scikit-learn, t-SNE, KMeans.**
 
-## 🚀 Demonstrated strengths
-
-- Deployment of an interactive and interpretable application for credit scoring.
-- Implementation of a clear and reproducible workflow for data processing.
-- Ability to popularize technology monitoring and link it to concrete use cases.
-- Solid knowledge of MLflow, NLP, SHAP, data visualization, and cloud deployment.
-
 ## 👤 Author
 
 **Alexandre Christophe Dominique Martineau**
