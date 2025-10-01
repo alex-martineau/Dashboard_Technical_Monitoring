@@ -16,15 +16,18 @@ It connects to an external API to download a scoring model and perform creditwor
 ## 🛠 Local Installation
 
 **1. Clone the repository**
+
 git clone https://github.com/alex-martineau/Dashboard_Technical_Monitoring.git
 cd Dashboard_Technical_Monitoring
 
 **2. Create a virtual environment**
+
 python -m venv venv
 source venv/bin/activate # Linux / Mac
 venv\Scripts\activate # Windows
 
 **3. Install dependencies**
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
@@ -38,6 +41,7 @@ API_URL=https://my-scoring-app-546acd78d8fa.herokuapp.com/
 (⚠️ These values ​​must be adapted according to your scoring API.)
 
 **5. Launch the dashboard**
+
 streamlit run dashboard.py
 
 Then open http://localhost:8501
@@ -46,6 +50,7 @@ in your browser.
 ## ☁️ Deployment (Heroku / Render)
 
 **1. Heroku**
+
 heroku create my-scoring-dashboard
 git push heroku main
 
