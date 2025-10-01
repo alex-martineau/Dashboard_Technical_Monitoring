@@ -12,16 +12,20 @@ import json
 import seaborn as sns
 import numpy as np
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 port = os.environ.get('PORT', 8501)
 
 st.set_page_config(page_title="Dashboard de Crédit Scoring")
 
-url = "https://my-scoring-app-546acd78d8fa.herokuapp.com/"
+url = os.environ.get("API_URL", "https://my-scoring-app-546acd78d8fa.herokuapp.com/")
+model_password = os.environ.get("MODEL_PASSWORD", "Credit-Scoring-2025")
 
 @st.cache_resource
 def get_model():
-    params = {"password": "Credit-Scoring-2025"}
+    params = {"password": model_password}
     response = requests.get(f'{url}download_model', params=params)
     if response.status_code == 200:
         model_file = BytesIO(response.content)
@@ -256,4 +260,5 @@ if __name__ == "__main__":
             display_bivariate_analysis(selected_feature, selected_feature_2, client_data_to_display)
             st.write(client_data_to_display[merged_features])
     else:
+
         st.warning("Aucun ID de client disponible. Veuillez vérifier les fichiers sources.")
