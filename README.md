@@ -84,6 +84,6 @@ mlflow-skinny>=2.22.2
 
 ## 👨‍💻 Author
 
-**Alexandre Christophe Dominque Martineau**
+**Alexandre Christophe Dominique Martineau**
 - [GitHub](https://github.com/alex-martineau)
 - [LinkedIn](https://www.linkedin.com/in/alexandre-martineau-170ab973/)
