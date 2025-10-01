@@ -44,8 +44,7 @@ API_URL=https://my-scoring-app-546acd78d8fa.herokuapp.com/
 
 streamlit run dashboard.py
 
-Then open http://localhost:8501
-in your browser.
+Then open **http://localhost:8501** in your browser.
 
 ## ☁️ Deployment (Heroku / Render)
 
@@ -64,7 +63,6 @@ heroku config:set API_URL=https://my-scoring-app-546acd78d8fa.herokuapp.com/
 - Create a new web service → Choose your GitHub repository.
 - Start command:
 web: streamlit run dashboard.py --server.port=$PORT --server.enableCORS false
-
 - Add the MODEL_PASSWORD and API_URL environment variables to the Render configuration table.
 
 **🔒 Security**
